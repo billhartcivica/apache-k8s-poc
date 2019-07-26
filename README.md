@@ -25,3 +25,5 @@ In this example, I've used the 'NodePort' option to expose the ports for the web
 which sets a port (eg: 31080/TCP) on each slave node in the Kubernetes cluster that points back to port 80/TCP on the
 internal Docker service for Apache. In a real-world scenario, a load balancer would then be set up in AWS to point
 back to port 31080, with the normal port 80 set externally.
+
+Note: Normally there would be a testing phase, but in this example it's been omitted for simplicity.
