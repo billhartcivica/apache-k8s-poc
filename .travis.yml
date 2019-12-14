@@ -11,16 +11,16 @@ jobs:
       - echo "$DOCKER_PW" | docker login -u "$DOCKER_LOGIN" --password-stdin
       - docker build -t local/apachetest:$TRAVIS_BRANCH-$VERSION .
       - docker images
-      - docker tag local/apachetest:$TRAVIS_BRANCH-$VERSION crownpeak/apachetest:$TRAVIS_BRANCH-$VERSION
-      - docker push crownpeak/apachetest:$TRAVIS_BRANCH-$VERSION
+      - docker tag local/apachetest:$TRAVIS_BRANCH-$VERSION wtghcivica/apachetest:$TRAVIS_BRANCH-$VERSION
+      - docker push wtghcivica/apachetest:$TRAVIS_BRANCH-$VERSION
     - stage: test
       # Only test if the branch is dev - in this example, test is just curling the web server page.
       if: branch = dev
       script:
       - export VERSION=`cat version.txt`
       - echo "$DOCKER_PW" | docker login -u "$DOCKER_LOGIN" --password-stdin
-      - docker pull crownpeak/apachetest:$TRAVIS_BRANCH-$VERSION 
-      - docker run -d -p 80:80 crownpeak/apachetest:$TRAVIS_BRANCH-$VERSION
+      - docker pull wtghcivica/apachetest:$TRAVIS_BRANCH-$VERSION 
+      - docker run -d -p 80:80 wtghcivica/apachetest:$TRAVIS_BRANCH-$VERSION
       - sleep 10
       - curl http://localhost:80
     - stage: deployment
