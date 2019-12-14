@@ -26,4 +26,4 @@ which sets a port (eg: 31080/TCP) on each slave node in the Kubernetes cluster t
 internal Docker service for Apache. In a real-world scenario, a load balancer would then be set up in AWS to point
 back to port 31080, with the normal port 80 set externally.
 
-Note: Normally there would be a testing phase, but in this example it's been omitted for simplicity.
+Note: Normally there would be a testing phase, but in this example it's been omitted for simplicity..
