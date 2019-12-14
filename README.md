@@ -15,7 +15,7 @@ In the example given, the first phase - the container build - is performed regar
 step builds the container using the directives in the Dockerfile, logs onto Dockerhub and pushes the completed container
 to the private artifact repo, giving it a 'tag' or version number. This version number is taken from the 'version.txt'
 file in the Github repo, though in practice this would probably be from the pom.xml file used in compiling the binary
-component.
+component..
 
 In the deployment phase, Travis parses the version number into the apachetest-deployment.yml file, then runs the 
 kubectl command to download the container from Dockerhub onto the K8s cluster and run it. The apachetest-service.yml
